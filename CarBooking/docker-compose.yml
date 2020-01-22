@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  carbookingapi:
+    image: ${DOCKER_REGISTRY-}carbookingapi
+    build:
+      context: .
+      dockerfile: CarBookingAPI/Dockerfile
+    environment:
+        ConnectionStrings__DefaultConnection: "Server=db,1433; Database=CarBooking; User Id=sa; Password=P@ssw0rd;"
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+
+   db:
+     image: "mcr.microsoft.com/mssql/server"
+     ports:
+        - "1433:1433"
+     environment:
+        SA_PASSWORD: "P@ssw0rd"
+        ACCEPT_EULA: "Y"
