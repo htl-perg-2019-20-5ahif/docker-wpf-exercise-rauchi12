@@ -26,7 +26,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Brand" Binding="{Binding Brand}"/>
                     <DataGridTextColumn Header="Model" Binding="{Binding Model}"/>
-                    <DataGridTextColumn Header="LicensePlate" Binding="{Binding LicensePlate}"/>
+                    <DataGridTextColumn Header="LicensePlate" Binding="{Binding LicensePlaete}"/>
                 </DataGrid.Columns>
             </DataGrid>
 

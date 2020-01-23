@@ -120,7 +120,7 @@ namespace CarBookingWPF
                 _ => FetchType.All,
             };
 
-            var requestUri = "http://localhost:5000/api/cars/" + fetchType switch
+            var requestUri = "http://localhost:5000/api/car/" + fetchType switch
             {
                 FetchType.All => "all",
                 FetchType.Available => "available",
@@ -167,7 +167,7 @@ namespace CarBookingWPF
                 return;
             }
 
-            var requestUri = "http://localhost:5000/api/cars/available?date=" + SelectedDate.ToString("yyyy-MM-ddTHH:mm:ss.fff");
+            var requestUri = "http://localhost:5000/api/car/available?date=" + SelectedDate.ToString("yyyy-MM-ddTHH:mm:ss.fff");
 
             // Fetch the list
             var cars = await FetchList(requestUri);

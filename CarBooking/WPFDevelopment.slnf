@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "CarBooking.sln",
+    "projects": [
+      "..\\CarBookingWPF\\CarBookingWPF.csproj"
+    ]
+  }
+}

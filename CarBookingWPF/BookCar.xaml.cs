@@ -59,7 +59,7 @@ namespace CarBookingWPF
             };
 
             var content = new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("http://localhost:5000/api/bookings", content);
+            var response = await client.PostAsync("http://localhost:5000/api/booking", content);
 
             try
             {

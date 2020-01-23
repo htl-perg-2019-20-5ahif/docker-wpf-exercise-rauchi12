@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace CarBookingAPI
 {
@@ -32,8 +33,9 @@ namespace CarBookingAPI
             services.AddDbContext<CarBookingDataContext>(options => options.UseSqlServer(
                 Configuration["ConnectionStrings:DefaultConnection"]));
 
-            
 
+            services.AddControllers().AddNewtonsoftJson(settings =>
+                settings.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
         }
 
